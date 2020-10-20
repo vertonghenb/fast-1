@@ -155,7 +155,7 @@ export class Card extends FASTElement {
 export const CardTemplate: import("@microsoft/fast-element").ViewTemplate<Card, any>;
 
 // @public
-export enum cellType {
+export enum cellTypes {
     // (undocumented)
     columnHeader = "column-header",
     // (undocumented)
@@ -253,7 +253,7 @@ export class DataGrid extends FASTElement {
 
 // @public
 export class DataGridCell extends FASTElement {
-    cellType: cellType;
+    cellType: cellTypes;
     columnData: DataGridColumn | null;
     // @internal (undocumented)
     connectedCallback(): void;
@@ -308,7 +308,7 @@ export class DataGridRow extends FASTElement {
     isActiveRow: boolean;
     rowData: object | null;
     rowIndex: number;
-    rowType: rowType;
+    rowType: rowTypes;
     // @internal (undocumented)
     slottedCellElements: HTMLElement[];
     }
@@ -666,7 +666,7 @@ export const RadioGroupTemplate: import("@microsoft/fast-element").ViewTemplate<
 export const RadioTemplate: import("@microsoft/fast-element").ViewTemplate<Radio, any>;
 
 // @public
-export enum rowType {
+export enum rowTypes {
     // (undocumented)
     default = "default",
     // (undocumented)
