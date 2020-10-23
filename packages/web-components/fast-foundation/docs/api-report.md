@@ -243,7 +243,7 @@ export type CSSDisplayPropertyValue = "block" | "contents" | "flex" | "grid" | "
 // @public
 export class DataGrid extends FASTElement {
     constructor();
-    columnsData: ColumnDefinition[];
+    columnDefinitions: ColumnDefinition[];
     // @internal (undocumented)
     connectedCallback(): void;
     // @internal (undocumented)
@@ -252,7 +252,6 @@ export class DataGrid extends FASTElement {
     focusRowIndex: number;
     static generateColumns: (row: object) => ColumnDefinition[];
     generateHeader: boolean;
-    static generateTemplateColumns(columnsData: ColumnDefinition[]): string;
     gridTemplateColumns: string;
     // (undocumented)
     handleFocus(e: FocusEvent): void;
@@ -267,7 +266,7 @@ export class DataGrid extends FASTElement {
 // @public
 export class DataGridCell extends FASTElement {
     cellType: cellTypes;
-    columnData: ColumnDefinition | null;
+    columnDefinition: ColumnDefinition | null;
     // @internal (undocumented)
     connectedCallback(): void;
     // @internal (undocumented)
@@ -279,7 +278,6 @@ export class DataGridCell extends FASTElement {
     handleFocusout(e: FocusEvent): void;
     // (undocumented)
     handleKeydown(e: KeyboardEvent): void;
-    isActiveCell: boolean;
     rowData: object | null;
     }
 
@@ -289,15 +287,13 @@ export const DataGridCellTemplate: import("@microsoft/fast-element").ViewTemplat
 // @public
 export class DataGridRow extends FASTElement {
     // (undocumented)
-    cellElements?: object[];
-    // (undocumented)
     cellItemTemplate?: ViewTemplate;
-    columnsData: ColumnDefinition[] | null;
+    columnDefinitions: ColumnDefinition[] | null;
     // @internal (undocumented)
     connectedCallback(): void;
     // @internal (undocumented)
     disconnectedCallback(): void;
-    // (undocumented)
+    // @internal (undocumented)
     focusColumnIndex: number;
     gridTemplateColumns: string;
     // (undocumented)
@@ -306,7 +302,6 @@ export class DataGridRow extends FASTElement {
     handleFocusout(e: FocusEvent): void;
     // (undocumented)
     handleKeydown(e: KeyboardEvent): void;
-    isActiveRow: boolean;
     rowData: object | null;
     rowIndex: number;
     rowType: rowTypes;
