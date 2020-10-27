@@ -762,7 +762,6 @@ export const TabPanelTemplate: import("@microsoft/fast-element").ViewTemplate<Ta
 //
 // @public
 export class Tabs extends FASTElement {
-    constructor();
     activeid: string;
     // @internal (undocumented)
     activeidChanged(): void;
